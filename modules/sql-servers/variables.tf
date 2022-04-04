@@ -47,25 +47,10 @@ variable "sql-fw-rules" {
     end_ip   = "0.0.0.0"
     },
     {
-      name     = "PERIM_VPN_UK_1",
-      start_ip = "212.59.65.142",
-      end_ip   = "212.59.65.142"
-    },
-    {
-      name     = "PERIM_VPN_UK_2",
-      start_ip = "212.59.65.150",
-      end_ip   = "212.59.65.150"
-    },
-    {
-      name     = "PERIM_VPN_EU_1",
-      start_ip = "172.104.150.88",
-      end_ip   = "172.104.150.88"
-    },
-    {
-      name     = "PERIM_VPN_US_1",
-      start_ip = "131.226.32.111",
-      end_ip   = "131.226.32.111"
-  }]
+      name     = "VPN",
+      start_ip = "0.0.0.0",
+      end_ip   = "0.0.0.0"
+    }]
 }
 
 variable "primary_location" {

@@ -20,6 +20,8 @@ resource "random_password" "password" {
   min_special      = 6
 }
 
+##################################
+
 # SQL Server
 
 resource "azurerm_mssql_server" "sqlserver" {
@@ -57,7 +59,6 @@ resource "azurerm_mssql_server" "sqlserver_secondary" {
 
   tags = var.tags
 }
-
 
 ##################################
 
