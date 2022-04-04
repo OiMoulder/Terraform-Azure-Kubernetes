@@ -143,90 +143,22 @@ resource "azurerm_key_vault" "keyvault" {
 
 # }
 
-resource "azurerm_key_vault_secret" "identityserver" {
-  name         = format("sql-cas-password")
-  value        = var.identityserverpassword
+resource "azurerm_key_vault_secret" "sqlserver" {
+  name         = format("sql-password")
+  value        = var.sqlserverpassword
   key_vault_id = azurerm_key_vault.keyvault.id
 
   lifecycle {
     create_before_destroy = true
   }
-
 }
 
-# resource "azurerm_key_vault_secret" "identityserversecondary" {
-#   name         = format("sql-cas-password")
-#   value        = var.identityserversecondarypassword
-#   key_vault_id = azurerm_key_vault.keyvault.id
-
-#   lifecycle {
-#     create_before_destroy = true
-#   }
-
-# }
-
-resource "azurerm_key_vault_secret" "tenancymanagement" {
-  name         = format("sql-tenman-password")
-  value        = var.tenancymanagementpassword
+resource "azurerm_key_vault_secret" "sqlserversecondary" {
+  name         = format("sql-secondary-password")
+  value        = var.sqlserversecondarypassword
   key_vault_id = azurerm_key_vault.keyvault.id
 
   lifecycle {
-    create_before_destroy = true
+  create_before_destroy = true
   }
-
 }
-
-# resource "azurerm_key_vault_secret" "tenancymanagementsecondary" {
-#   name         = format("sql-tenman-password")
-#   value        = var.tenancymanagementsecondarypassword
-#   key_vault_id = azurerm_key_vault.keyvault.id
-
-#   lifecycle {
-#     create_before_destroy = true
-#   }
-
-# }
-
-resource "azurerm_key_vault_secret" "reportsserver" {
-  name         = format("sql-reports-password")
-  value        = var.reportsserverpassword
-  key_vault_id = azurerm_key_vault.keyvault.id
-
-  lifecycle {
-    create_before_destroy = true
-  }
-
-}
-
-# resource "azurerm_key_vault_secret" "reportsserversecondary" {
-#   name         = format("sql-tenman-password")
-#   value        = var.reportsserversecondarypassword
-#   key_vault_id = azurerm_key_vault.keyvault.id
-
-#   lifecycle {
-#     create_before_destroy = true
-#   }
-
-# }
-
-resource "azurerm_key_vault_secret" "policyserverpassword" {
-  name         = format("sql-policy-password")
-  value        = var.policyserverpassword
-  key_vault_id = azurerm_key_vault.keyvault.id
-
-  lifecycle {
-    create_before_destroy = true
-  }
-
-}
-
-# resource "azurerm_key_vault_secret" "policyserversecondary" {
-#   name         = format("sql-policy-password")
-#   value        = var.policyserversecondarypassword
-#   key_vault_id = azurerm_key_vault.keyvault.id
-
-#   lifecycle {
-#     create_before_destroy = true
-#   }
-
-# }
