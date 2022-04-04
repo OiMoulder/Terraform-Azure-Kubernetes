@@ -153,14 +153,8 @@ module "create_key_vault" {
   # green_ingress_ip_address                = module.create_public_ips.green_ingress_ip_address
   # green_egress_ip_address                 = module.create_public_ips.green_egress_ip_address
   # green_testing_ip_address                = module.create_public_ips.green_testing_ip_address
-  identityserverpassword                  = module.create_sql_servers.identityserverpassword
-  #identityserversecondarypassword         = module.create_sql_servers.identityserversecondarypassword
-  tenancymanagementpassword               = module.create_sql_servers.tenancymanagementpassword
-  #tenancymanagementsecondarypassword      = module.create_sql_servers.tenancymanagementsecondarypassword
-  reportsserverpassword                   = module.create_sql_servers.reportsserverpassword
-  #reportsserversecondarypassword          = module.create_sql_servers.reportsserversecondarypassword
-  policyserverpassword                    = module.create_sql_servers.policyserverpassword
-  #policyserversecondarypassword           = module.create_sql_servers.policyserversecondarypassword
+  sqlserverpassword                  = module.create_sql_servers.sqlserverpassword
+  sqlserversecondarypassword         = module.create_sql_servers.sqlserversecondarypassword
 
   # dependencies
 
